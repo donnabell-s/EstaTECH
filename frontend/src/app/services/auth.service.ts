@@ -6,6 +6,7 @@ import { tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
   private baseUrl = 'http://127.0.0.1:8000/api/Users/login_user'; // Adjust the URL as needed
 

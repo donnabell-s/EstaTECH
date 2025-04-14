@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import OutstandingToken, BlacklistedToken, RefreshToken
 from django.http import JsonResponse
 from django.views import View
+from .permissions import IsAgent
 from .serializers import UserSerializer, PropertySerializer, EventSerializer, OfferSerializer, VisitsSerializer, InterestSerializer
 import phgeograpy
 
@@ -168,13 +169,81 @@ class OfferViewSet(viewsets.ModelViewSet):
         
         Offer.objects.create(buyer=user, agent=agent, property=property)
 
+        return Response({'message': 'Offer made successfully'}, status=status.HTTP_201_CREATED)
+    
+    @action(detail=False, methods=['get'])
+    def offer_by_buyer(self, request):
+        buyer = request.query_params.get('buyer')
+
+        try:
+            buyer = User.objects.get(id=buyer['id'])  # Adjust this if you use a different identifier
+        except User.DoesNotExist:
+            return Response({'error': 'Buyer  does not exist'}, status=status.HTTP_400_BAD_REQUEST)
+
+        offer = Offer.objects.filter(
+            buyer=buyer
+        )
+
+        serializer = OfferSerializer(offer, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
 class VisitsViewSet(viewsets.ModelViewSet):
     queryset = Visits.objects.all()
     serializer_class = VisitsSerializer
 
+    @action(detail=False, methods=['post'])
+    def sched_visit(self, request):
+        seller = request.data.get('user')
+        agent = request.data.get('agent')
+        property = request.data.get('property')
+
+        try:
+            user = User.objects.get(id=seller['id'])  # Adjust this if you use a different identifier
+        except User.DoesNotExist:
+            return Response({'error': 'User  does not exist'}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            agent = User.objects.get(id=agent['id'])  # Adjust this if you use a different identifier
+            if agent.roles != 'agent':  # Assuming 'roles' is the field that defines the user's role
+                return Response({'error': 'User is not an agent'}, status=status.HTTP_400_BAD_REQUEST)
+        except User.DoesNotExist:
+            return Response({'error': 'Agent does not exist'}, status=status.HTTP_400_BAD_REQUEST)
+        
+        try:
+            property = User.objects.get(id=property['id'])  # Adjust this if you use a different identifier
+        except Property.DoesNotExist:
+            return Response({'error': 'User  does not exist'}, status=status.HTTP_400_BAD_REQUEST)
+        
+        Visits.objects.create(seller=user, agent=agent, property=property)
+
+        return Response({'message': 'Visit Scheduled successfully'}, status=status.HTTP_201_CREATED)
+    
+
+    
+
 class InterestViewSet(viewsets.ModelViewSet):
     queryset = Interest.objects.all()
     serializer_class = InterestSerializer
+
+    @action(detail=False, methods=['post'])
+    def mark_interested(self, request):
+        buyer = request.data.get('user')
+        property = request.data.get('property')
+
+        try:
+            buyer = User.objects.get(id=buyer['id'])  # Adjust this if you use a different identifier
+        except User.DoesNotExist:
+            return Response({'error': 'User  does not exist'}, status=status.HTTP_400_BAD_REQUEST)
+        
+        try:
+            property = User.objects.get(id=property['id'])  # Adjust this if you use a different identifier
+        except Property.DoesNotExist:
+            return Response({'error': 'User  does not exist'}, status=status.HTTP_400_BAD_REQUEST)
+        
+        Interest.objects.create(buyer=buyer, property=property)
+
+        return Response({'message': 'Interest marked successfully'}, status=status.HTTP_201_CREATED)
+
 
 class ProvinceListView(View):
     def get(self, request, *args, **kwargs):
