@@ -1,1 +1,38 @@
-<p>coordinate-offers works!</p>
+<form>
+    <div>
+        <label for="property">Property:</label>
+        <select id="property" name="property">
+            <option value="" disabled selected>Select a property</option>
+            <!-- Static options for properties -->
+            <option value="1">Property 1</option>
+            <option value="2">Property 2</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="buyer">Buyer:</label>
+        <select id="buyer" name="buyer">
+            <option value="" disabled selected>Select a buyer</option>
+            <!-- Static options for buyers -->
+            <option value="1">Buyer 1</option>
+            <option value="2">Buyer 2</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="agent">Agent:</label>
+        <select id="agent" name="agent">
+            <option value="" disabled selected>Select an agent</option>
+            <!-- Static options for agents -->
+            <option value="1">Agent 1</option>
+            <option value="2">Agent 2</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" min="0" value="0" />
+    </div>
+
+    <button type="submit">Submit Offer</button>
+</form>

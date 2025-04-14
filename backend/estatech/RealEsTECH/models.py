@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser 
-import phgeograpy
+# import phgeograpy
 
 
 
@@ -47,5 +47,21 @@ class Event(models.Model):
     province=models.CharField(max_length=100, null=True, blank=True)
     # MUNICIPALITIES_CHOICES=[(p, p) for p in phgeograpy.municipalities()]
     municipality=models.CharField(max_length=100, null=True, blank=True)
+
+class Offer(models.Model):
+    buyer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='userOffer', null=True, blank=True )
+    agent = models.ForeignKey(User, on_delete=models.CASCADE, related_name='agentOffer', null=True, blank=True )
+    property = models.ForeignKey(Property, on_delete=models.CASCADE,  null=True, blank=True)
+
+class Visits(models.Model):
+    seller = models.ForeignKey(User, on_delete=models.CASCADE, related_name='userVisits',  null=True, blank=True )
+    agent = models.ForeignKey(User, on_delete=models.CASCADE,  related_name='agentVisits',null=True, blank=True )
+    property = models.ForeignKey(Property, on_delete=models.CASCADE,  null=True, blank=True )
+
+class Interest(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='userInterest', null=True, blank=True )
+    property = models.ForeignKey(Property, on_delete=models.CASCADE, related_name='propertyInterest', null=True, blank=True )
+
+
 
 # Create your models here.
