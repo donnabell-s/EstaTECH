@@ -151,15 +151,22 @@ const routes: Routes = [
         loadComponent: () => import('./features/platform-wide/review-rating-system/review-rating-system.component').then(m => m.ReviewRatingSystemComponent)
       },
       {
-        path: 'agent-recommender',
-        loadComponent: () => import('./features/platform-wide/agent-recommender/agent-recommender.component').then(m => m.AgentRecommenderComponent)
-      },
-      {
         path: 'moderation-reporting',
         loadComponent: () => import('./features/platform-wide/moderation-reporting/moderation-reporting.component').then(m => m.ModerationReportingComponent)
       }
     ]
   },
+  {path: 'dash', component: DasboardComponent},
+  {path: 'internalmsg', component: InternalMessagingComponent},
+  {path: 'navbar', component: NavBarComponent},
+  {path: 'searchmodule', component: SearchModuleComponent},
+  {path: 'viewproplist', component: SearchPropertiesComponent},
+  {path: 'viewpropdetails', component: ViewPropDetailsComponent},
+  {path: 'testimonies', component: TestimoniesComponent},
+  {path: 'recoprop', component: RecoPropComponent},
+  {path: 'partner', component: PartnersComponent},
+  {path: 'corefeature', component: CoreFeaturesComponent},
+
   { path: '', redirectTo: '/buyer', pathMatch: 'full' },
   { path: '**', redirectTo: '/buyer' }
 ];
