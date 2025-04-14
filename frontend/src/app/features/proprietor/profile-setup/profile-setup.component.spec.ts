@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RateAgentComponent } from './rate-agent.component';
+import { ProfileSetupComponent } from './profile-setup.component';
 
-describe('RateAgentComponent', () => {
-  let component: RateAgentComponent;
-  let fixture: ComponentFixture<RateAgentComponent>;
+describe('ProfileSetupComponent', () => {
+  let component: ProfileSetupComponent;
+  let fixture: ComponentFixture<ProfileSetupComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RateAgentComponent]
+      imports: [ProfileSetupComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RateAgentComponent);
+    fixture = TestBed.createComponent(ProfileSetupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

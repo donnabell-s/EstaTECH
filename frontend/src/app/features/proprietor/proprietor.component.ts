@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-proprietor',
-  imports: [],
+  imports: [RouterOutlet],
   templateUrl: './proprietor.component.html',
   styleUrl: './proprietor.component.css'
 })

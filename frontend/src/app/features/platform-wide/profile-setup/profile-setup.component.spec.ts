@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PinPropertyComponent } from './pin-property.component';
+import { ProfileSetupComponent } from './profile-setup.component';
 
-describe('PinPropertyComponent', () => {
-  let component: PinPropertyComponent;
-  let fixture: ComponentFixture<PinPropertyComponent>;
+describe('ProfileSetupComponent', () => {
+  let component: ProfileSetupComponent;
+  let fixture: ComponentFixture<ProfileSetupComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PinPropertyComponent]
+      imports: [ProfileSetupComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PinPropertyComponent);
+    fixture = TestBed.createComponent(ProfileSetupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
