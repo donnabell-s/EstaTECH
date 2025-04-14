@@ -167,8 +167,8 @@ const routes: Routes = [
   {path: 'partner', component: PartnersComponent},
   {path: 'corefeature', component: CoreFeaturesComponent},
 
-  { path: '', redirectTo: '/buyer', pathMatch: 'full' },
-  { path: '**', redirectTo: '/buyer' }
+  { path: '', redirectTo: '/dash', pathMatch: 'full' },
+  { path: '**', redirectTo: '/dash' }
 ];
 
 export default routes;
