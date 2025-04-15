@@ -45,8 +45,8 @@
           </ul>
           <ul *ngIf="agentLoggedIn" class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#!">Dashboard</a></li>
-            <li><a class="dropdown-item" href="#!">Assigned Properties</a></li>
-            <li><a class="dropdown-item ms-4" href="#!">Verify Listings</a></li>
+            <li><a class="dropdown-item" routerLink="/agent/assigned-properties">Assigned Properties</a></li>
+            <li><a class="dropdown-item ms-4" routerLink="/agent/verify-property">Verify Listings</a></li>
             <li><a class="dropdown-item ms-4" href="#!">Upload Property Videos</a></li>
             <li><a class="dropdown-item ms-4" href="#!">Update Property Info</a></li>
             <li><a class="dropdown-item" href="#!">Leads & Inquiries</a></li>
@@ -54,12 +54,12 @@
             <li><a class="dropdown-item ms-4" href="#!">Lead Labels (Potential, Not Interested, Closed)</a></li>
             <li><a class="dropdown-item ms-4" href="#!">Add Notes</a></li>
             <li><a class="dropdown-item"  routerLink="/agent/coordinate-offers">Appointments & Visits</a></li>
-            <li><a class="dropdown-item ms-4" href="#!">Schedule & Confirm Visits</a></li>
+            <li><a class="dropdown-item ms-4" routerLink="/agent/scheduled-visits">Schedule & Confirm Visits</a></li>
             <li><a class="dropdown-item ms-4" href="#!">Calendar View</a></li>
-            <li><a class="dropdown-item" href="#!">Performance Dashboard</a></li>
+            <li><a class="dropdown-item" routerLink="/agent/view-performance">Performance Dashboard</a></li>
             <li><a class="dropdown-item ms-4" href="#!">Ratings & Feedback</a></li>
             <li><a class="dropdown-item ms-4" href="#!">Lead Conversion</a></li>
-            <li><a class="dropdown-item" href="#!">Training & Events</a></li>
+            <li><a class="dropdown-item" routerLink="/agent/trainings">Training & Events</a></li>
             <li><a class="dropdown-item" href="#!">Messages</a></li>
             <li><a class="dropdown-item" href="#!">Profile</a></li>
             <li>
