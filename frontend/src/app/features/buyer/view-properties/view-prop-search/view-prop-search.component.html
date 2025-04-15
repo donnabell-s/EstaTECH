@@ -1,1 +1,21 @@
-<p>view-prop-search works!</p>
+<div class="search m-4">
+    <div class="d-flex flex-row align-items-center">
+        <div class="flex-grow-1 me-2">
+            <input type="text" class="form-control" placeholder="Search properties">
+        </div>
+        <div class="d-flex flex-row gap-1">
+            <button (click)="toggleView()"
+                    [ngClass]="{'btn-primary': isMapView, 'btn-outline-primary': !isMapView}" 
+                    class="btn btn-outline-primary">
+                {{ isMapView ? 'List' : 'Map' }}
+            </button>
+            <button class="btn btn-outline-secondary">Filters</button>
+            <button class="btn btn-outline-success">Saved</button>
+        </div>
+    </div>
+</div>
+
+<div id="viewContainer">
+    <app-view-prop-map *ngIf="isMapView"></app-view-prop-map>
+    <app-view-prop-list *ngIf="!isMapView"></app-view-prop-list>
+</div>

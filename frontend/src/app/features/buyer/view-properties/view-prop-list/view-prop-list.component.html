@@ -1,15 +1,51 @@
-<div>
-    <div>
-        <ul>
-            <li>
-                <div>
-                    <div class="prop-img"></div>
-                    <div class="prop-name"></div>
-                    <div class="prop-loc"></div>
-                    <div class="prop-details"></div>
-                    <div class="prop-agent"></div>
-                </div>
-            </li>
-        </ul>
+
+
+<div class="list mt-4 m-4">
+    <div class="row">
+      <div class="col-md-6 col-lg-4 mb-4" *ngFor="let listing of realEstateListings">
+        <div class="card h-100">
+          <div class="card-header bg-primary text-white d-flex flex-row justify-content-between">
+            <div class="d-flex flex-column">
+                <h5 class="card-title mb-0">{{ listing.name }}</h5>
+                <small>{{ listing.propertyType }} - {{ listing.propertySubType }}</small>
+            </div>
+            <div>
+                <p class="card-text">
+                    <span>
+                      {{ listing.verification }}
+                    </span>
+                  </p>
+            </div>
+          </div>
+          <!-- Image placeholder with grey background -->
+          <div class="image-placeholder" style="height: 200px; background-color: #e9ecef;"></div>
+          <div class="card-body">
+            <p class="card-text"><strong>Location:</strong> {{ listing.location }}</p>
+            <div class="row">
+              <div class="col-6">
+                <p class="card-text"><strong>Price:</strong> ${{ listing.price }}</p>
+              </div>
+              <div class="col-6">
+                <p class="card-text"><strong>Area:</strong> {{ listing.squareArea }} sq.ft</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <p class="card-text"><strong>Beds:</strong> {{ listing.bed }}</p>
+              </div>
+              <div class="col-6">
+                <p class="card-text"><strong>Baths:</strong> {{ listing.bath }}</p>
+              </div>
+            </div>
+            <p class="card-text"><strong>Agent:</strong> {{ listing.agentAssigned }}</p>
+          </div>
+          <div class="card-footer bg-transparent d-flex flex-row">
+            <button class="btn btn-primary w-100" (click)="viewDetails()">View Details</button>
+            <button class="btn" (click)="toggleHeart(listing)" [ngClass]="{'text-danger': listing.isHearted}">
+              <i class="bi" [ngClass]="listing.isHearted ? 'bi-heart-fill' : 'bi-heart'"></i>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>

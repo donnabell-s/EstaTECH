@@ -6,10 +6,11 @@ import { RecoPropComponent } from '../../recommender/reco-prop/reco-prop.compone
 import { TestimoniesComponent } from '../../features/landing/testimonies/testimonies.component';
 import { PartnersComponent } from '../../features/landing/partners/partners.component';
 import { CoreFeaturesComponent } from '../../features/landing/core-features/core-features.component';
+import { SearchContainerComponent } from '../../features/buyer/search-properties/search-container/search-container.component';
 
 @Component({
   selector: 'app-dasboard',
-  imports: [SearchPropertiesComponent, TestimoniesComponent, PartnersComponent, CoreFeaturesComponent],
+  imports: [SearchContainerComponent, TestimoniesComponent, PartnersComponent, CoreFeaturesComponent],
   templateUrl: './dasboard.component.html',
   styleUrl: './dasboard.component.css'
 })
