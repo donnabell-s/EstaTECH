@@ -14,6 +14,7 @@ interface RealEstateListing {
   bath: number;
   agentAssigned: string;
   isHearted: boolean; // Add this property
+  img: string;
 }
 
 @Component({
@@ -38,7 +39,8 @@ export class ViewPropListComponent {
       squareArea: 2800,
       agentAssigned: "Sarah Johnson",
       verification: "AI Verified",
-      isHearted: false
+      isHearted: false,
+      img: "/prop1.jpg",
     },
     {
       propertyType: "Residential",
@@ -51,7 +53,8 @@ export class ViewPropListComponent {
       squareArea: 1200,
       agentAssigned: "Michael Chen",
       verification: "Verified by Appraisers",
-      isHearted: false
+      isHearted: false,
+      img: "/prop1.jpg",
     },
     {
       propertyType: "Commercial",
@@ -64,7 +67,8 @@ export class ViewPropListComponent {
       squareArea: 5000,
       agentAssigned: "Robert Williams",
       verification: "AI Verified",
-      isHearted: false
+      isHearted: false,
+      img: "/prop1.jpg",
     },
     {
       propertyType: "Residential",
@@ -77,7 +81,8 @@ export class ViewPropListComponent {
       squareArea: 1800,
       agentAssigned: "Emily Rodriguez",
       verification: "Verified by Appraisers",
-      isHearted: false
+      isHearted: false,
+      img: "/prop1.jpg",
     },
     {
       propertyType: "Land",
@@ -90,7 +95,8 @@ export class ViewPropListComponent {
       squareArea: 10000,
       agentAssigned: "David Thompson",
       verification: "AI Verified",
-      isHearted: false
+      isHearted: false,
+      img: "/prop1.jpg",
     },
     {
       propertyType: "Residential",
@@ -103,7 +109,8 @@ export class ViewPropListComponent {
       squareArea: 850,
       agentAssigned: "Jessica Lee",
       verification: "Verified by Appraisers",
-      isHearted: false
+      isHearted: false,
+      img: "/prop1.jpg",
     },
     {
       propertyType: "Commercial",
@@ -116,7 +123,8 @@ export class ViewPropListComponent {
       squareArea: 2500,
       agentAssigned: "James Wilson",
       verification: "AI Verified",
-      isHearted: false
+      isHearted: false,
+      img: "/prop1.jpg",
     },
     {
       propertyType: "Residential",
@@ -129,7 +137,8 @@ export class ViewPropListComponent {
       squareArea: 4200,
       agentAssigned: "Amanda Carter",
       verification: "Verified by Appraisers",
-      isHearted: false
+      isHearted: false,
+      img: "/prop1.jpg",
     }
   ];
 
