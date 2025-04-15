@@ -1,0 +1,49 @@
+.feature-item {
+    max-width: 340px;
+    min-height: 290px;
+    padding: 35px;
+    background-color: #ede7e7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+}
+
+h5, span{
+    text-align: center;
+}
+
+.img-fluid{
+    max-height: 50px;
+    margin-bottom: 24px;
+}
+
+h5{
+    font-size: 20px;
+}
+
+span{
+    font-size: 15px;
+}
+
+
+.heading-with-lines {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* space between lines and text */
+    width: 100%; /* full width of parent */
+  }
+  
+  .heading-with-lines .line {
+    flex-grow: 1;           /* lines expand to fill space */
+    height: 2px;            /* thickness of line */
+    background-color: #333; /* line color */
+  }
+    
+  .heading-with-lines h1 {
+    margin: 0;
+    white-space: nowrap;    /* prevent wrapping */
+    /* font-weight: bold;
+    font-size: 2rem; */
+    text-align: center;
+  }

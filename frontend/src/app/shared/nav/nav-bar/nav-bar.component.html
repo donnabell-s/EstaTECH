@@ -1,9 +1,9 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary pt-3 pb-3 pe-5 ps-5">
+<nav class="navbar navbar-expand-lg bg-body-tertiary pt-3 pb-3 pe-4 ps-4">
   <div class="container-fluid">
-    <ng-container>
-      <div class="home-logo"></div>
-    </ng-container>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <div class="app-logo">
+      <img src="/LOGO.png" alt="LOGO" class="img-fluid">
+    </div>
+    <div class="collapse navbar-collapse ms-3" id="navbarTogglerDemo01">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-4">
         <li class="nav-item">
       <a routerLink="/dash">Home</a>
@@ -19,7 +19,7 @@
         </li>
       </ul>
       <div class="d-flex flex-row gap-3">
-        <a routerLink="/internalmsg">Inbox</a>
+        <a routerLink="/platform-wide/internal-messaging">Inbox</a>
         <ng-container>
           <a style="cursor: pointer">Log Out</a>
         </ng-container>
