@@ -1,1 +1,51 @@
-<p>manage-leads works!</p>
+<div class="manage-leads">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Buyer Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Property</th>
+                <th>Interest Level</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John Doe</td>
+                <td>johndo.com</td>
+                <td>123-456-7890</td>
+                <td>123 Main St</td>
+                <td>
+                    <select>
+                        <option value="prospect">Prospect</option>
+                        <option value="hot-lead">Hot Lead</option>
+                        <option value="warm">Warm</option>
+                    </select>
+                </td>
+                <td>
+                    <button onclick="alert('Add notes for John Doe')">Add Notes</button>
+                    <button onclick="alert('Message John Doe')">Message</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>janesmie.com</td>
+                <td>987-654-3210</td>
+                <td>456 Elm St</td>
+                <td>
+                    <select>
+                        <option value="prospect">Prospect</option>
+                        <option value="hot-lead">Hot Lead</option>
+                        <option value="warm">Warm</option>
+                    </select>
+                </td>
+                <td>
+                    <button onclick="alert('Add notes for Jane Smith')">Add Notes</button>
+                    <button onclick="alert('Message Jane Smith')">Message</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

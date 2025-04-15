@@ -1,38 +1,58 @@
-<form>
-    <div>
-        <label for="property">Property:</label>
-        <select id="property" name="property">
-            <option value="" disabled selected>Select a property</option>
-            <!-- Static options for properties -->
-            <option value="1">Property 1</option>
-            <option value="2">Property 2</option>
-        </select>
-    </div>
 
-    <div>
-        <label for="buyer">Buyer:</label>
-        <select id="buyer" name="buyer">
-            <option value="" disabled selected>Select a buyer</option>
-            <!-- Static options for buyers -->
-            <option value="1">Buyer 1</option>
-            <option value="2">Buyer 2</option>
-        </select>
-    </div>
 
-    <div>
-        <label for="agent">Agent:</label>
-        <select id="agent" name="agent">
-            <option value="" disabled selected>Select an agent</option>
-            <!-- Static options for agents -->
-            <option value="1">Agent 1</option>
-            <option value="2">Agent 2</option>
-        </select>
-    </div>
+<!-- Filter input -->
+<div class="filters">
+    <label for="propertyFilter">Filter by Property:</label>
+    <input id="propertyFilter" type="text" placeholder="Enter property name" disabled />
 
-    <div>
-        <label for="price">Price:</label>
-        <input type="number" id="price" name="price" min="0" value="0" />
-    </div>
+    <label for="buyerFilter">Filter by Buyer:</label>
+    <input id="buyerFilter" type="text" placeholder="Enter buyer name" disabled />
 
-    <button type="submit">Submit Offer</button>
-</form>
+</div>
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Property</th>
+                <th>Buyer</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Static rows for offers -->
+            <tr>
+                <td>Property A</td>
+                <td>Buyer X</td>
+                <td>$500,000</td>
+                <td id = "action-buttons">
+                    <button>Approve Offer</button>
+                    <button>Decline Offer</button>
+                    <button>Message Buyer</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Property B</td>
+                <td>Buyer Z</td>
+                <td>$750,000</td>
+                <td id = "action-buttons">
+                    <button>Approve Offer</button>
+                    <button>Decline Offer</button>
+                    <button>Message Buyer</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Property C</td>
+                <td>Buyer Y</td>
+                <td>$600,000</td>
+                <td id = "action-buttons">
+                    <button>Approve Offer</button>
+                    <button>Decline Offer</button>
+                    <button>Message Buyer</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

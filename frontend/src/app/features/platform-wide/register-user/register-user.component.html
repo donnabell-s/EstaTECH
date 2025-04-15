@@ -1,0 +1,16 @@
+<form (submit)="addUser()">
+    <input type="text" name="username" [(ngModel)]="newUser.username" placeholder="Username" required />
+    <input type="password" name="password" [(ngModel)]="newUser.password" placeholder="Password" required />
+    <input type="email" name="email" [(ngModel)]="newUser.email" placeholder="Email" required />
+    <input type="text" name="first_name" [(ngModel)]="newUser.first_name" placeholder="First Name" required />
+    <input type="text" name="last_name" [(ngModel)]="newUser.last_name" placeholder="Last Name" required />
+
+     <!-- Role dropdown -->
+     <select name="role" [(ngModel)]="newUser.role" required>
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+        <option value="agent">Agent</option>
+    </select>
+    
+    <button type="submit">Register User</button>
+</form>
