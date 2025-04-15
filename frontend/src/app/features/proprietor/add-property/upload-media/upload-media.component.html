@@ -1,43 +1,47 @@
-<div>
-    <div>
-
-    </div>
-    <div>
-        <h3>Media Upload</h3>
-        <form action="">
-            <div class="row">
-                <div class="col">
-                    <div>
-                        <label for="">Photos (Min. of 3 images [front, interior, back])</label>
-                        <input type="file">
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+            <h3>Media Upload</h3>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="mediaUploadForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="photos">Photos (Min. of 3 images [front, interior, back])</label>
+                            <input type="file" id="photos" formControlName="photos" class="form-control">
+                            <div *ngIf="mediaUploadForm.get('photos')?.invalid && mediaUploadForm.get('photos')?.touched" class="text-danger">
+                                Please upload at least 3 images.
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <label>Showcase/Preview</label>
+                            <!-- ngFor -->
+                            <div>
+                                <img src="" alt="image 1" class="img-thumbnail">
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <label for="">Showcase/Preview</label>
-                        <!-- ngFor -->
-                        <div>
-                            <img src="" alt="image 1">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="video">Video Tour</label>
+                            <input type="file" id="video" formControlName="video" class="form-control">
+                            <div *ngIf="mediaUploadForm.get('video')?.invalid && mediaUploadForm.get('video')?.touched" class="text-danger">
+                                Please upload a valid video file.
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <label>Showcase/Preview</label>
+                            <!-- ngFor -->
+                            <video width="320" height="240" controls class="mt-2">
+                                <source src="movie.mp4" type="video/mp4">
+                                <source src="movie.ogg" type="video/ogg">
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div>
-                        <label for="">Video Tour</label>
-                        <input type="file">
-                    </div>
-                    <div class="d-flex flex-column">
-                        <label for="">Showcase/Preview</label>
-                        <!-- ngFor -->
-                        <video width="320" height="240" controls>
-                            <source src="movie.mp4" type="video/mp4">
-                            <source src="movie.ogg" type="video/ogg">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <button>Next</button>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </div>

@@ -1,18 +1,62 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import * as L from 'leaflet';
 
 @Component({
   selector: 'app-upload-property',
-  imports: [],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './upload-property.component.html',
   styleUrl: './upload-property.component.css'
 })
 export class UploadPropertyComponent implements OnInit {
   private map!: L.Map;
+  propertyForm!: FormGroup;
   pinImagePath = "frontend/src/assets/pin-1.svg";
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
     this.initializeMap();
+    this.initializeForm();
+  }
+
+  get form(): FormGroup {
+    return this.propertyForm;
+  }
+
+  get amenitiesFormGroup(): FormGroup {
+    return this.propertyForm.get('amenities') as FormGroup;
+  }
+
+  private initializeForm() {
+    this.propertyForm = this.fb.group({
+      propertyTitle: ['', Validators.required],
+      propertyType: ['', Validators.required],
+      listingType: ['', Validators.required],
+      price: [null, [Validators.required, Validators.min(0)]],
+      bedrooms: [null, [Validators.required, Validators.min(0)]],
+      bathrooms: [null, [Validators.required, Validators.min(0)]],
+      floorArea: [null, [Validators.required, Validators.min(0)]],
+      amenities: this.fb.group({
+        wifi: [false]
+      }),
+      condition: ['', Validators.required],
+      description: ['', Validators.required],
+      address: ['', Validators.required],
+      region: ['', Validators.required],
+      province: ['', Validators.required],
+      municipality: ['', Validators.required]
+    });
+  }
+
+  onSubmit() {
+    if (this.propertyForm.valid) {
+      console.log('Form submitted successfully:', this.propertyForm.value);
+      alert('Property details submitted successfully!');
+    } else {
+      alert('Please fill out all required fields.');
+    }
   }
 
   private initializeMap() {

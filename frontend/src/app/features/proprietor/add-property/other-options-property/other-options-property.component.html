@@ -1,34 +1,41 @@
 <div class="container">
     <div>
-
     </div>
     <div>
         <h3>Other Options</h3>
-        <form action="" class="d-flex gap-5">
+        <form [formGroup]="propertyForm" class="row g-3 needs-validation" novalidate>
             <div class="row">
-                <div class="col">
-                    <label for="">Preferred Agent</label>
+                <div class="col-md-6">
+                    <label for="preferredAgent" class="form-label">Preferred Agent</label>
                     <div>
                         <!-- ngFor -->
-                        <div>
-                            <input type="checkbox">
-                            <img src="" alt="agent 1">
+                        <div class="form-check" *ngFor="let agent of agents">
+                            <input type="checkbox" class="form-check-input" id="agent-{{agent.id}}" formControlName="preferredAgent">
+                            <label class="form-check-label" for="agent-{{agent.id}}">
+                                <img [src]="agent.image" alt="agent {{agent.id}}" class="img-thumbnail" style="width: 50px; height: 50px;">
+                            </label>
+                        </div>
+                        <div *ngIf="propertyForm.get('preferredAgent')?.invalid && propertyForm.get('preferredAgent')?.touched" class="text-danger">
+                            Please select at least one agent.
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col">
-                    <label for="">Availability for Viewing</label>
+                <div class="col-md-6">
+                    <label for="availability" class="form-label">Availability for Viewing</label>
                     <div>
                         <div (click)="$event.stopPropagation()" class="drop-calendar">
                             <mat-calendar #calendar (selectedChange)="select($event,calendar)" [dateClass]="isSelected"></mat-calendar>
                         </div>
-                        <label for="">Selected Dates</label>
+                        <label for="selectedDates" class="form-label">Selected Dates</label>
                         <div class="results">
                             <div *ngFor="let date of dates">
                                 {{ date.zone("+09:00").format('YYYY/MM/DD') }}
                             </div>
+                        </div>
+                        <div *ngIf="dates.length === 0" class="text-danger">
+                            Please select at least one date.
                         </div>
                     </div>
                 </div>
