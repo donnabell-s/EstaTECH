@@ -2,13 +2,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
+    /* margin: 20px; */
 }
 
 #map {
     width: 100%;
     /* Full width */
-    max-width: 800px;
+    /* max-width: 800px; */
     /* Maximum width */
     height: 400px;
     /* Fixed height */

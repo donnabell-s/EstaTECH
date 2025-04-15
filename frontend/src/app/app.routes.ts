@@ -1,4 +1,16 @@
 import { Routes } from '@angular/router';
+import { DasboardComponent } from './shared/dasboard/dasboard.component';
+import { NavBarComponent } from './shared/nav/nav-bar/nav-bar.component';
+import { ViewPropertiesComponent } from './features/buyer/view-properties/view-properties.component';
+import { SearchPropertiesComponent } from './features/buyer/search-properties/search-properties.component';
+import { ViewPropListComponent } from './features/buyer/view-properties/view-prop-list/view-prop-list.component';
+import { ViewPropDetailsComponent } from './features/buyer/view-properties/view-prop-details/view-prop-details.component';
+import { RecoPropComponent } from './recommender/reco-prop/reco-prop.component';
+import { InternalMessagingComponent } from './features/platform-wide/internal-messaging/internal-messaging.component';
+import { TestimoniesComponent } from './features/landing/testimonies/testimonies.component';
+import { PartnersComponent } from './features/landing/partners/partners.component';
+import { CoreFeaturesComponent } from './features/landing/core-features/core-features.component';
+import { DashboardComponent } from './features/platform-wide/dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -11,12 +23,26 @@ const routes: Routes = [
         loadComponent: () => import('./features/proprietor/profile-setup/profile-setup.component').then(m => m.ProfileSetupComponent)
       },
       {
-        path: 'upload-property',
-        loadComponent: () => import('./features/proprietor/add-property/upload-property/upload-property.component').then(m => m.UploadPropertyComponent)
-      },
-      {
-        path: 'upload-media',
-        loadComponent: () => import('./features/proprietor/add-property/upload-media/upload-media.component').then(m => m.UploadMediaComponent)
+        path: 'add-property',
+        loadComponent: () => import('./features/proprietor/add-property/add-property.component').then(m => m.AddPropertyComponent),
+        children: [
+          {
+            path: 'upload-property',
+            loadComponent: () => import('./features/proprietor/add-property/upload-property/upload-property.component').then(m => m.UploadPropertyComponent)
+          },
+          {
+            path: 'upload-media',
+            loadComponent: () => import('./features/proprietor/add-property/upload-media/upload-media.component').then(m => m.UploadMediaComponent)
+          },
+          {
+            path: 'other-options',
+            loadComponent: () => import('./features/proprietor/add-property/other-options-property/other-options-property.component').then(m => m.OtherOptionsPropertyComponent)
+          },
+          {
+            path: 'upload-documents',
+            loadComponent: () => import('./features/proprietor/add-property/upload-documents/upload-documents.component').then(m => m.UploadDocumentsComponent)
+          }
+        ]
       },
       {
         path: 'connect-agent',
@@ -29,10 +55,6 @@ const routes: Routes = [
       { 
         path: 'view-scheduled-visits',
         loadComponent: () => import('./features/proprietor/view-scheduled-visits/view-scheduled-visits.component').then(m => m.ViewScheduledVisitsComponent)
-      },
-      {
-        path: 'other-options',
-        loadComponent: () => import('./features/proprietor/add-property/other-options-property/other-options-property.component').then(m => m.OtherOptionsPropertyComponent)
       }
     ]
   },
@@ -68,11 +90,39 @@ const routes: Routes = [
     children: [
       {
         path: 'search-properties',
-        loadComponent: () => import('./features/buyer/search-properties/search-properties.component').then(m => m.SearchPropertiesComponent)
+        loadComponent: () => import('./features/buyer/search-properties/search-properties.component').then(m => m.SearchPropertiesComponent),
+        children: [
+          {
+            path: 'filter-modal',
+            loadComponent: () => import('./features/buyer/search-properties/filter-modal/filter-modal.component').then(m => m.FilterModalComponent)
+          },
+          {
+            path: 'search-container',
+            loadComponent: () => import('./features/buyer/search-properties/search-container/search-container.component').then(m => m.SearchContainerComponent)
+          }
+        ]
       },
       {
         path: 'view-properties',
-        loadComponent: () => import('./features/buyer/view-properties/view-properties.component').then(m => m.ViewPropertiesComponent)
+        loadComponent: () => import('./features/buyer/view-properties/view-properties.component').then(m => m.ViewPropertiesComponent),
+        children: [
+          {
+            path: 'view-prop-list',
+            loadComponent: () => import('./features/buyer/view-properties/view-prop-list/view-prop-list.component').then(m => m.ViewPropListComponent)
+          },
+          {
+            path: 'view-prop-map',
+            loadComponent: () => import('./features/buyer/view-properties/view-prop-map/view-prop-map.component').then(m => m.ViewPropMapComponent)
+          },
+          {
+            path: 'view-prop-details',
+            loadComponent: () => import('./features/buyer/view-properties/view-prop-details/view-prop-details.component').then(m => m.ViewPropDetailsComponent)
+          },
+          {
+            path: 'view-prop-search',
+            loadComponent: () => import('./features/buyer/view-properties/view-prop-search/view-prop-search.component').then(m => m.ViewPropSearchComponent)
+          }
+        ]
       },
       {
         path: 'submit-offer',
@@ -139,17 +189,29 @@ const routes: Routes = [
         loadComponent: () => import('./features/platform-wide/review-rating-system/review-rating-system.component').then(m => m.ReviewRatingSystemComponent)
       },
       {
-        path: 'agent-recommender',
-        loadComponent: () => import('./features/platform-wide/agent-recommender/agent-recommender.component').then(m => m.AgentRecommenderComponent)
-      },
-      {
         path: 'moderation-reporting',
         loadComponent: () => import('./features/platform-wide/moderation-reporting/moderation-reporting.component').then(m => m.ModerationReportingComponent)
+      },
+      {
+        path: 'internal-messaging',
+        loadComponent: () => import('./features/platform-wide/internal-messaging/internal-messaging.component').then(m => m.InternalMessagingComponent)
       }
     ]
   },
-  { path: '', redirectTo: '/buyer', pathMatch: 'full' },
-  { path: '**', redirectTo: '/buyer' }
+  {path: 'dash', component: DasboardComponent},
+  // {path: 'internalmsg', component: InternalMessagingComponent},
+  {path: 'navbar', component: NavBarComponent},
+  // {path: 'searchModal', component: SearchModalComponent},
+  // {path: 'viewproplist', component: SearchPropertiesComponent},
+  // {path: 'viewpropdetails', component: ViewPropDetailsComponent},
+  {path: 'testimonies', component: TestimoniesComponent},
+  {path: 'recoprop', component: RecoPropComponent},
+  {path: 'partner', component: PartnersComponent},
+  {path: 'corefeature', component: CoreFeaturesComponent},
+  {path: 'dashboard', loadComponent: () => import('./features/platform-wide/dashboard/dashboard.component').then(m => m.DashboardComponent)},
+
+  { path: '', redirectTo: '/dash', pathMatch: 'full' },
+  { path: '**', redirectTo: '/dash' }
 ];
 
 export default routes;
