@@ -77,6 +77,18 @@ const routes: Routes = [
       {
         path: 'view-performance',
         loadComponent: () => import('./features/agent/view-performance/view-performance.component').then(m => m.ViewPerformanceComponent)
+      },
+      {
+        path: 'scheduled-visits',
+        loadComponent: () => import('./features/agent/scheduled-visits/scheduled-visits.component').then(m => m.ScheduledVisitsComponent)
+      },
+      {
+        path: 'trainings',
+        loadComponent: () => import('./features/agent/trainings/trainings.component').then(m => m.TrainingsComponent)
+      },
+      {
+        path: 'assigned-properties',
+        loadComponent: () => import('./features/agent/assigned-properties/assigned-properties.component').then(m => m.AssignedPropertiesComponent)
       }
     ]
   },
