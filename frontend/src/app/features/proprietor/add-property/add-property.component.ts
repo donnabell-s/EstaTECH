@@ -22,12 +22,11 @@ export class AddPropertyComponent implements OnInit {
   @ViewChild(OtherOptionsPropertyComponent, { static: false }) otherOptionsPropertyComponent!: OtherOptionsPropertyComponent;
 
   addPropertyForm!: FormGroup;
-  totalSteps: number = 6;
+  totalSteps: number = 5;
   currentStep: number = 2; // Starts at step 2
   completedSteps: number[] = [1]; // Step 1 is already completed
 
   constructor(private router: Router) {
-    this.initializeForm();
   }
 
   ngOnInit(): void {
@@ -52,42 +51,6 @@ export class AddPropertyComponent implements OnInit {
     }
   }
 
-  private initializeForm(): void {
-    // this.addPropertyForm = this.fb.group({
-    //   propertyDetails: this.fb.group({
-    //     propertyTitle: ['', Validators.required],
-    //     propertyType: ['', Validators.required],
-    //     listingType: ['', Validators.required],
-    //     price: [null, [Validators.required, Validators.min(0)]],
-    //     bedrooms: [null, [Validators.required, Validators.min(0)]],
-    //     bathrooms: [null, [Validators.required, Validators.min(0)]],
-    //     floorArea: [null, [Validators.required, Validators.min(0)]],
-    //     amenities: this.fb.group({
-    //       wifi: [false]
-    //     }),
-    //     condition: ['', Validators.required],
-    //     description: ['', Validators.required],
-    //     address: ['', Validators.required],
-    //     region: ['', Validators.required],
-    //     province: ['', Validators.required],
-    //     municipality: ['', Validators.required]
-    //   }),
-    //   media: this.fb.group({
-    //     photos: [null, [Validators.required, this.minFilesValidator(3)]],
-    //     video: [null, Validators.required]
-    //   }),
-    //   documents: this.fb.group({
-    //     titleDeed: [null, Validators.required],
-    //     taxDeclaration: ['', [Validators.required, Validators.email]],
-    //     validId: [null, Validators.required]
-    //   }),
-    //   otherOptions: this.fb.group({
-    //     preferredAgent: this.fb.array([], Validators.required),
-    //     availability: [null, Validators.required]
-    //   })
-    // });
-  }
-
   onNextStep(): void {
     switch(this.currentStep) {
       case 1:
@@ -105,10 +68,6 @@ export class AddPropertyComponent implements OnInit {
       case 4:
         this.currentStep++;
         this.router.navigate(['/proprietor/add-property/upload-documents']);
-        break;
-      case 5:
-        this.currentStep++;
-        this.router.navigate(['/proprietor/add-property/other-options']);
         break;
     } 
   }
@@ -135,9 +94,6 @@ export class AddPropertyComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.otherOptionsPropertyComponent.form.valid) {
-      console.log('Form submitted successfully:', this.addPropertyForm.value);
-      this.router.navigate(['/success']);
-    }
+    this.router.navigate(['/dashboard']);
   }
 }

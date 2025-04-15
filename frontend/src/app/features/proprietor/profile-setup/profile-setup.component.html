@@ -1,12 +1,13 @@
 <div class="container mt-4">
     <div class="row justify-content-center mt-4">
         <div class="col-md-8">
+            <h5 class="text-center mb-4">Step 1</h5>
             <h3 class="text-center mb-4">Personal Information</h3>
             <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
                 <div class="mb-3">
                     <label for="fullName" class="form-label">Full Name</label>
                     <input type="text" class="form-control" id="fullName" formControlName="fullName"
-                        placeholder="Enter full name...">
+                        placeholder="Enter full name..." value="Donna Elizabeth Sembrano">
                     <div *ngIf="profileForm.get('fullName')?.touched && profileForm.get('fullName')?.invalid"
                         class="text-danger">
                         Full Name is required and must be at least 3 characters long.
@@ -15,7 +16,7 @@
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" id="email" formControlName="email"
-                        placeholder="Enter email...">
+                        placeholder="Enter email..." value="donna@usjr.edu.ph">
                     <div *ngIf="profileForm.get('email')?.touched && profileForm.get('email')?.invalid"
                         class="text-danger">
                         Please enter a valid email address.
@@ -24,7 +25,7 @@
                 <div class="mb-3">
                     <label for="mobileNumber" class="form-label">Mobile Number</label>
                     <input type="text" class="form-control" id="mobileNumber" formControlName="mobileNumber"
-                        placeholder="Enter mobile number...">
+                        placeholder="Enter mobile number..." value="09123456789">
                     <div *ngIf="profileForm.get('mobileNumber')?.touched && profileForm.get('mobileNumber')?.invalid"
                         class="text-danger">
                         Mobile Number is required and must be 10 digits.
@@ -32,7 +33,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="governmentId" class="form-label">Government ID</label>
-                    <input type="file" class="form-control" id="governmentId" formControlName="governmentId">
+                    <input type="file" class="form-control" id="governmentId" formControlName="governmentId" value="gov-id.png">
                     <div *ngIf="profileForm.get('governmentId')?.touched && profileForm.get('governmentId')?.invalid"
                         class="text-danger">
                         Government ID is required.

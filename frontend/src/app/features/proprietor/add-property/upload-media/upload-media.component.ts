@@ -12,6 +12,9 @@ import { Router } from '@angular/router';
 export class UploadMediaComponent implements OnInit {
   mediaUploadForm!: FormGroup;
   step: number = 3; // Step 3 in the multi-step form
+  image1 = "/prop1.jpg"
+  image2 = "/prop2.jpg"
+  image3 = "/prop3.jpg"
 
   constructor(private fb: FormBuilder, private router: Router) {}
 

@@ -12,7 +12,7 @@ import * as L from 'leaflet';
 export class UploadPropertyComponent implements OnInit {
   private map!: L.Map;
   propertyForm!: FormGroup;
-  pinImagePath = "frontend/src/assets/pin-1.svg";
+  pinImagePath = "/pin-1.svg";
 
   constructor(private fb: FormBuilder) { }
 
@@ -31,22 +31,26 @@ export class UploadPropertyComponent implements OnInit {
 
   private initializeForm() {
     this.propertyForm = this.fb.group({
-      propertyTitle: ['', Validators.required],
-      propertyType: ['', Validators.required],
-      listingType: ['', Validators.required],
-      price: [null, [Validators.required, Validators.min(0)]],
-      bedrooms: [null, [Validators.required, Validators.min(0)]],
-      bathrooms: [null, [Validators.required, Validators.min(0)]],
-      floorArea: [null, [Validators.required, Validators.min(0)]],
+      propertyTitle: ['Spacious Modern Apartment', Validators.required],
+      propertyType: ['Apartment', Validators.required],
+      listingType: ['For Sale', Validators.required],
+      price: [150000, [Validators.required, Validators.min(0)]],
+      bedrooms: [3, [Validators.required, Validators.min(0)]],
+      bathrooms: [2, [Validators.required, Validators.min(0)]],
+      floorArea: [120, [Validators.required, Validators.min(0)]],
       amenities: this.fb.group({
-        wifi: [false]
+      wifi: [true],
+      parking: [true],
+      pool: [false],
+      gym: [true],
+      security: [false]
       }),
-      condition: ['', Validators.required],
-      description: ['', Validators.required],
-      address: ['', Validators.required],
-      region: ['', Validators.required],
-      province: ['', Validators.required],
-      municipality: ['', Validators.required]
+      condition: ['New', Validators.required],
+      description: ['A spacious and modern apartment located in the heart of the city, featuring 3 bedrooms, 2 bathrooms, and a large living area. Perfect for families or professionals seeking comfort and convenience.', Validators.required],
+      address: ['456 Modern Avenue', Validators.required],
+      region: ['Region VII', Validators.required],
+      province: ['Cebu', Validators.required],
+      municipality: ['Cebu City', Validators.required]
     });
   }
 

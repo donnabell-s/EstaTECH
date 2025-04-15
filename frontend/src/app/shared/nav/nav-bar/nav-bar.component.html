@@ -50,10 +50,10 @@
             <li><a class="dropdown-item ms-4" href="#!">Upload Property Videos</a></li>
             <li><a class="dropdown-item ms-4" href="#!">Update Property Info</a></li>
             <li><a class="dropdown-item" href="#!">Leads & Inquiries</a></li>
-            <li><a class="dropdown-item ms-4" href="#!">View Interested Buyers</a></li>
+            <li><a class="dropdown-item ms-4"  routerLink="/agent/manage-leads">View Interested Buyers</a></li>
             <li><a class="dropdown-item ms-4" href="#!">Lead Labels (Potential, Not Interested, Closed)</a></li>
             <li><a class="dropdown-item ms-4" href="#!">Add Notes</a></li>
-            <li><a class="dropdown-item" href="#!">Appointments & Visits</a></li>
+            <li><a class="dropdown-item"  routerLink="/agent/coordinate-offers">Appointments & Visits</a></li>
             <li><a class="dropdown-item ms-4" href="#!">Schedule & Confirm Visits</a></li>
             <li><a class="dropdown-item ms-4" href="#!">Calendar View</a></li>
             <li><a class="dropdown-item" href="#!">Performance Dashboard</a></li>
@@ -74,7 +74,7 @@
           <ul *ngIf="buyerLoggedIn" class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#!">Dashboard</a></li>
             <li><a class="dropdown-item" href="#!">Browse Properties</a></li>
-            <li><a class="dropdown-item ms-4" href="#!">Map View / List View</a></li>
+            <li><a class="dropdown-item ms-4" routerLink="/buyer/view-properties/view-prop-list">Map View / List View</a></li>
             <li><a class="dropdown-item ms-4" href="#!">Filters & Smart Recommendations</a></li>
             <li><a class="dropdown-item" href="#!">Saved Properties</a></li>
             <li><a class="dropdown-item ms-4" href="#!">Favorites</a></li>

@@ -30,6 +30,7 @@ export class UploadDocumentsComponent {
 
   onSubmit(): void {
     if (this.documentsForm.valid) {
+      
       console.log('Documents uploaded successfully:', this.documentsForm.value);
       alert('Documents uploaded successfully!');
     } else {

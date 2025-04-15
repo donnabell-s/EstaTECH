@@ -16,10 +16,10 @@ export class ProfileSetupComponent {
 
   constructor(private fb: FormBuilder, private router: Router) {
     this.profileForm = this.fb.group({
-      fullName: ['', [Validators.required, Validators.minLength(3)]],
-      email: ['', [Validators.required, Validators.email]],
-      mobileNumber: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
-      governmentId: [null, Validators.required]
+      fullName: ['Donna Elizabeth Sembrano', [Validators.required, Validators.minLength(3)]],
+      email: ['donna@usjr.edu.ph', [Validators.required, Validators.email]],
+      mobileNumber: ['0912345678', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      governmentId: [null]
     });
   }
 

@@ -9,7 +9,7 @@ import * as L from 'leaflet';
 })
 export class ViewPropMapComponent implements OnInit{
  private map!: L.Map;
-  pinImagePath = "./../../../../assets/pin-1.svg";
+  pinImagePath = "/pin-1.svg";
 
   ngOnInit() {
     this.initializeMap();

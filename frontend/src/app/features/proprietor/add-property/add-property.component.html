@@ -1,18 +1,11 @@
-<div class="container mt-4">
-    <div class="row justify-content-center p-5">
-        <app-multi-step-form-indicator [ngClass]="currentStep < 3 ? 'marked' : ''"></app-multi-step-form-indicator>
-        <app-multi-step-form-indicator [ngClass]="currentStep < 4 ? 'marked' : ''"></app-multi-step-form-indicator>
-        <app-multi-step-form-indicator [ngClass]="currentStep < 5 ? 'marked' : ''"></app-multi-step-form-indicator>
-        <app-multi-step-form-indicator [ngClass]="currentStep < 6 ? 'marked' : ''"></app-multi-step-form-indicator>
-    </div>
-
+<div class="container mt-4 mb-5">
     <div class="row justify-content-center mt-4">
         <router-outlet></router-outlet>
     </div>
 
     <div class="row justify-content-center mt-4">
         <!-- Navigation Buttons -->
-        <div class="col-md-6 d-flex justify-content-between">
+        <div class="col-md-6 d-flex justify-content-center gap-4 mb-5">
             <button class="btn btn-secondary" (click)="onPreviousStep()" [disabled]="currentStep === 1">
                 Previous
             </button>
