@@ -1,0 +1,13 @@
+card-footer{
+    padding: 0;
+}
+
+.bi{
+    margin-right: -10px;
+    outline: none;
+}
+
+i{
+    height: 15px;
+    outline: none;
+}

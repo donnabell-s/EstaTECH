@@ -1,0 +1,36 @@
+.testimony{
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .testimony > :first-child {
+    margin-bottom: 10px;
+  }
+  
+  .img-fluid{
+    height: 50px;
+  }
+  
+  
+  .heading-with-lines {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* space between lines and text */
+    width: 100%; /* full width of parent */
+  }
+  
+  .heading-with-lines .line {
+    flex-grow: 1;           /* lines expand to fill space */
+    height: 2px;            /* thickness of line */
+    background-color: #333; /* line color */
+  }
+    
+  .heading-with-lines h1 {
+    margin: 0;
+    white-space: nowrap;    /* prevent wrapping */
+    /* font-weight: bold;
+    font-size: 2rem; */
+    text-align: center;
+  }

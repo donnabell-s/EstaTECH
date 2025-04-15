@@ -1,12 +1,12 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary pt-3 pb-3 pe-5 ps-5">
+<nav class="navbar navbar-expand-lg bg-body-tertiary pt-3 pb-3 pe-4 ps-4">
   <div class="container-fluid">
-    <ng-container>
-      <div class="home-logo"></div>
-    </ng-container>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <div class="app-logo">
+      <img src="/LOGO.png" alt="LOGO" class="img-fluid">
+    </div>
+    <div class="collapse navbar-collapse ms-3" id="navbarTogglerDemo01">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-4">
         <li class="nav-item">
-      <a routerLink="/dash">Home</a>
+          <a routerLink="/dash">Home</a>
         </li>
         <li class="nav-item">
           <a>About Us</a>
@@ -18,10 +18,116 @@
           <a>Find an Agent</a>
         </li>
       </ul>
+      <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false"></a>
+          <ul *ngIf="proprietorLoggedIn" class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#!">Dashboard</a></li>
+            <li><a class="dropdown-item" href="#!">My Properties</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Add New Property</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">View Listings</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Property Status (Pending/Verified/Published)</a></li>
+            <li><a class="dropdown-item" href="#!">Messages/Inquiries</a></li>
+            <li><a class="dropdown-item" href="#!">Offers Received</a></li>
+            <li><a class="dropdown-item" href="#!">Appointments / Scheduled Visits</a></li>
+            <li><a class="dropdown-item" href="#!">Profile & Property Ownership Info</a></li>
+            <li><a class="dropdown-item" href="#!">My Activity & Notifications</a></li>
+            <li><a class="dropdown-item" href="#!">Support & Help Center</a></li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <!-- @if(!checkLogin()) {
+            <li><a class="dropdown-item" href="#!" (click)="onLogin()">Login</a></li>
+            } @else {
+            <li><a class="dropdown-item" href="#!" (click)="onLogout()">Logout</a></li>
+            } -->
+          </ul>
+          <ul *ngIf="agentLoggedIn" class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#!">Dashboard</a></li>
+            <li><a class="dropdown-item" href="#!">Assigned Properties</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Verify Listings</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Upload Property Videos</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Update Property Info</a></li>
+            <li><a class="dropdown-item" href="#!">Leads & Inquiries</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">View Interested Buyers</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Lead Labels (Potential, Not Interested, Closed)</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Add Notes</a></li>
+            <li><a class="dropdown-item" href="#!">Appointments & Visits</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Schedule & Confirm Visits</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Calendar View</a></li>
+            <li><a class="dropdown-item" href="#!">Performance Dashboard</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Ratings & Feedback</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Lead Conversion</a></li>
+            <li><a class="dropdown-item" href="#!">Training & Events</a></li>
+            <li><a class="dropdown-item" href="#!">Messages</a></li>
+            <li><a class="dropdown-item" href="#!">Profile</a></li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <!-- @if(!checkLogin()) {
+            <li><a class="dropdown-item" href="#!" (click)="onLogin()">Login</a></li>
+            } @else {
+            <li><a class="dropdown-item" href="#!" (click)="onLogout()">Logout</a></li>
+            } -->
+          </ul>
+          <ul *ngIf="buyerLoggedIn" class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#!">Dashboard</a></li>
+            <li><a class="dropdown-item" href="#!">Browse Properties</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Map View / List View</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Filters & Smart Recommendations</a></li>
+            <li><a class="dropdown-item" href="#!">Saved Properties</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Favorites</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Interested List</a></li>
+            <li><a class="dropdown-item" href="#!">Offers Sent</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Track Status</a></li>
+            <li><a class="dropdown-item" href="#!">Schedule a Visit</a></li>
+            <li><a class="dropdown-item" href="#!">Upload Pre-Approved Mortgage</a></li>
+            <li><a class="dropdown-item" href="#!">Messages / Chat with Agents</a></li>
+            <li><a class="dropdown-item" href="#!">Profile</a></li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <!-- @if(!checkLogin()) {
+            <li><a class="dropdown-item" href="#!" (click)="onLogin()">Login</a></li>
+            } @else {
+            <li><a class="dropdown-item" href="#!" (click)="onLogout()">Logout</a></li>
+            } -->
+          </ul>
+          <ul *ngIf="adminLoggedIn" class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#!">Admin Dashboard</a></li>
+            <li><a class="dropdown-item" href="#!">Manage Users</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Proprietors</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Agents</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Buyers</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Flagged Accounts</a></li>
+            <li><a class="dropdown-item" href="#!">Assign Agents to Properties</a></li>
+            <li><a class="dropdown-item" href="#!">Event Management</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Trainings</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Webinars</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Platform Announcements</a></li>
+            <li><a class="dropdown-item" href="#!">Testimonial Management</a></li>
+            <li><a class="dropdown-item" href="#!">Monitor Platform Activity</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Analytics & Stats</a></li>
+            <li><a class="dropdown-item ms-4" href="#!">Performance Reports</a></li>
+            <li><a class="dropdown-item" href="#!">Support Requests</a></li>
+            <li><a class="dropdown-item" href="#!">Manage Listings</a></li>
+            <li><a class="dropdown-item" href="#!">System Settings</a></li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <!-- @if(!checkLogin()) {
+            <li><a class="dropdown-item" href="#!" (click)="onLogin()">Login</a></li>
+            } @else {
+            <li><a class="dropdown-item" href="#!" (click)="onLogout()">Logout</a></li>
+            } -->
+          </ul>
+        </li>
+      </ul>
       <div class="d-flex flex-row gap-3">
-        <a routerLink="/internalmsg">Inbox</a>
+        <a routerLink="/platform-wide/internal-messaging">Inbox</a>
         <ng-container>
-          <a style="cursor: pointer">Log Out</a>
+          <a style="cursor: pointer"  routerLink="/platform-wide/log-in">Log Out</a>
         </ng-container>
       </div>
     </div>

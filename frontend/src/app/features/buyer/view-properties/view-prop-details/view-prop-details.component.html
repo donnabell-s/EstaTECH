@@ -1,27 +1,123 @@
-<div class="d-flex flex-column">
-    <div></div>
-    <div class="d-flex flex-row">
-        <div>
-            <div class="d-flex flex-column">
-                <h2>Property Name</h2>
-                <h3>P2,000,000</h3>
-                <div class="d-flex flex-row">
-                    <div class="d-flex flex-column"></div>
-                    <div class="d-flex flex-column"></div>
-                    <div class="d-flex flex-column"></div>
-                    <div class="d-flex flex-column"></div>
+
+
+<div class="container py-4">
+    <div class="image-display row g-4 mb-4">
+        <div class="ecommerce-gallery vertical" data-mdb-ecommerce-gallery-init>
+            <div class="row">
+              <div class="col-4 col-sm-3">
+                <div class="multi-carousel vertical" data-mdb-multi-carousel-init data-mdb-items="3">
+                  <div class="multi-carousel-inner">
+                    <div class="multi-carousel-item active">
+                      <img
+                        src="/house-1.png"
+                        alt="Table full of spices"
+                        class="active w-100"
+                      />
+                    </div>
+                    <div class="multi-carousel-item">
+                      <img
+                        src="/house-2.png"
+                        alt="Winter Landscape"
+                        class="w-100 "
+                      />
+                    </div>
+                    <div class="multi-carousel-item">
+                      <img
+                        src="house-3.png"
+                        alt="View of the City in the Mountains"
+                        class="w-100"
+                      />
+                    </div>
+                    <div class="multi-carousel-item">
+                      <img
+                        src="house-4.png"
+                        alt="Place Royale Bruxelles"
+                        class="w-100"
+                      />
+                    </div>
+                  </div>
+                  <button
+                    class="carousel-control-prev"
+                    tabindex="0"
+                    type="button"
+                    data-mdb-slide="prev"
+                  >
+                    <span
+                      class="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                  </button>
+                  <button
+                    class="carousel-control-next"
+                    tabindex="0"
+                    type="button"
+                    data-mdb-slide="next"
+                  >
+                    <span
+                      class="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                  </button>
+                </div>
+              </div>
+              <div class="col-8 col-sm-9 d-flex align-items-center">
+                <div class="lightbox h-100" data-mdb-lightbox-init>
+                  <img
+                    src="/house-1.png"
+                    alt="Table full of spices"
+                    class="ecommerce-gallery-main-img active w-100 h-100"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="property-row row g-4">
+        <div class="property-details col-md-8 border rounded p-3 bg-light">
+            <div class="property-info">
+                <h2 class="property-name text-dark">Property Name</h2>
+                <h3 class="property-price text-primary">P2,000,000</h3>
+                <div class="property-features d-flex gap-2 mt-2">
+                    <div class="feature-box">
+                        <h6 class="mb-0">Bed</h6>
+                    </div>
+                    <div class="feature-box">
+                        <h6 class="mb-0">Bath</h6>
+                    </div>
+                    <div class="feature-box">
+                        <h6 class="mb-0">Floor Area</h6>
+                    </div>
+                    <div class="feature-box">
+                        <h6 class="mb-0">FOR SALE</h6>
+                    </div>
                 </div>
             </div>
-            <div></div>
-            <div>
-                <div></div>
-                <div></div>
-                <div></div>
+            <div class="property-description mt-3">
+              <span>
+                Farm LOT for Sale - Price negotiable
+
+17,652 sq. meters
+Located at Bae, Sibonga
+25 mins from 7/11 Sibonga along cemented barangay road,
+2 right of way with 50 more or less coconut trees.
+
+Papers ready to transfer to the new owner and updated tax.
+              </span>
             </div>
+            <div class="property-extra-info mt-3"></div>
         </div>
-        <div>
-            <div><h2>Ask about the Property</h2></div>
-            <div><button>Send Inquiry</button></div>
+        <div class="inquiry-box col-md-4 border rounded p-3 bg-light d-flex flex-column justify-content-between gap-3">
+          <div>
+            <h2 class="inquiry-title text-dark">Ask about the Property</h2>
+          </div>
+          <div class="h-100">
+            <input placeholder="I am interested in..." class="form-control h-100" type="text" aria-label="default input example">
+          </div>
+          <div class="inquiry-button-container mt-3 d-flex flex-row gap-3 align-items-center">
+            <button (click)="openInbox()" class="inquiry-button btn btn-primary w-100">Send Inquiry</button>
+            <img src="/facebook.svg">
+          </div>
         </div>
     </div>
 </div>

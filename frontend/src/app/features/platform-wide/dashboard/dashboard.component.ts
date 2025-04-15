@@ -1,18 +1,14 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { NavbarComponent } from '../navbar/navbar.component';
+import { ViewPropListComponent } from '../../buyer/view-properties/view-prop-list/view-prop-list.component';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [NavbarComponent],
+  imports: [ViewPropListComponent],
   standalone: true,
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DashboardComponent {
-  isSidebarOpen: boolean = true;
-
-  onSidebarToggle() {
-    this.isSidebarOpen = !this.isSidebarOpen;
-  }
+  
 }

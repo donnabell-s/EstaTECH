@@ -1,0 +1,11 @@
+.text-truncate {
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow content */
+    text-overflow: ellipsis; /* Show ellipsis for overflowed text */
+}
+
+.action button{
+    width: 250px;
+    height: 35px;
+}
+
