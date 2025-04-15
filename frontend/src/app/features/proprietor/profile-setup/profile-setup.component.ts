@@ -1,19 +1,20 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { MultiStepFormIndicatorComponent } from "../../../shared/multi-step-form-indicator/multi-step-form-indicator.component";
 
 @Component({
   selector: 'app-profile-setup',
-  imports: [CommonModule, ReactiveFormsModule, MultiStepFormIndicatorComponent],
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './profile-setup.component.html',
-  styleUrl: './profile-setup.component.css'
+  styleUrls: ['./profile-setup.component.css']
 })
 export class ProfileSetupComponent {
   profileForm: FormGroup;
-  flows: number = 1;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
     this.profileForm = this.fb.group({
       fullName: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
@@ -25,7 +26,7 @@ export class ProfileSetupComponent {
   onSubmit(): void {
     if (this.profileForm.valid) {
       console.log('Form Submitted:', this.profileForm.value);
-      this.flows = 5;
+      this.router.navigate(['/proprietor/add-property/upload-property']);
     } else {
       console.log('Form is invalid');
     }

@@ -1,0 +1,90 @@
+/* General container styling */
+.container {
+    background-color: #f8f9fa;
+    /* Light gray background for a clean look */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    padding: 20px;
+}
+
+/* Header styling */
+h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #2c3e50;
+    /* Dark blue-gray for a professional look */
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+form {
+    font-family: 'Roboto', sans-serif;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #34495e;
+    /* Slightly darker gray for labels */
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    /* Subtle border for inputs */
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    /* Blue border on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+    /* Subtle blue glow */
+}
+
+/* Error message styling */
+.text-danger {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Button styling */
+button {
+    background-color: #007bff;
+    /* Primary blue color */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+}
+
+button:disabled {
+    background-color: #6c757d;
+    /* Gray for disabled state */
+    cursor: not-allowed;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
