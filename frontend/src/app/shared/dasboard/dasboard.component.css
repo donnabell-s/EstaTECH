@@ -8,3 +8,7 @@
     justify-content: center; /* Optional: centers horizontally */
     align-items: center; /* Optional: centers vertically */
 }
+
+.banner h1{
+    color: white;
+}
