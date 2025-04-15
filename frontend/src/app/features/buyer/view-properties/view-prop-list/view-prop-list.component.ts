@@ -54,7 +54,7 @@ export class ViewPropListComponent {
       agentAssigned: "Michael Chen",
       verification: "Verified by Appraisers",
       isHearted: false,
-      img: "/prop1.jpg",
+      img: "/prop2.jpg",
     },
     {
       propertyType: "Commercial",
@@ -68,7 +68,7 @@ export class ViewPropListComponent {
       agentAssigned: "Robert Williams",
       verification: "AI Verified",
       isHearted: false,
-      img: "/prop1.jpg",
+      img: "/prop3.jpg",
     },
     {
       propertyType: "Residential",
@@ -82,7 +82,7 @@ export class ViewPropListComponent {
       agentAssigned: "Emily Rodriguez",
       verification: "Verified by Appraisers",
       isHearted: false,
-      img: "/prop1.jpg",
+      img: "/prop4.jpg",
     },
     {
       propertyType: "Land",
@@ -96,7 +96,7 @@ export class ViewPropListComponent {
       agentAssigned: "David Thompson",
       verification: "AI Verified",
       isHearted: false,
-      img: "/prop1.jpg",
+      img: "/prop5.jpg",
     },
     {
       propertyType: "Residential",
@@ -110,7 +110,7 @@ export class ViewPropListComponent {
       agentAssigned: "Jessica Lee",
       verification: "Verified by Appraisers",
       isHearted: false,
-      img: "/prop1.jpg",
+      img: "/prop6.jpg",
     },
     {
       propertyType: "Commercial",
@@ -124,7 +124,7 @@ export class ViewPropListComponent {
       agentAssigned: "James Wilson",
       verification: "AI Verified",
       isHearted: false,
-      img: "/prop1.jpg",
+      img: "/prop7.jpg",
     },
     {
       propertyType: "Residential",
@@ -138,7 +138,7 @@ export class ViewPropListComponent {
       agentAssigned: "Amanda Carter",
       verification: "Verified by Appraisers",
       isHearted: false,
-      img: "/prop1.jpg",
+      img: "/prop8.jpg",
     }
   ];
 

@@ -93,16 +93,31 @@
                     </div>
                 </div>
             </div>
-            <div class="property-description mt-3"></div>
+            <div class="property-description mt-3">
+              <span>
+                Farm LOT for Sale - Price negotiable
+
+17,652 sq. meters
+Located at Bae, Sibonga
+25 mins from 7/11 Sibonga along cemented barangay road,
+2 right of way with 50 more or less coconut trees.
+
+Papers ready to transfer to the new owner and updated tax.
+              </span>
+            </div>
             <div class="property-extra-info mt-3"></div>
         </div>
-        <div class="inquiry-box col-md-4 border rounded p-3 bg-light">
+        <div class="inquiry-box col-md-4 border rounded p-3 bg-light d-flex flex-column justify-content-between gap-3">
+          <div>
             <h2 class="inquiry-title text-dark">Ask about the Property</h2>
-            <div class="inquiry-button-container mt-3">
-                <button (click)="openInbox()" class="inquiry-button btn btn-primary">
-                    Send Inquiry
-                </button>
-            </div>
+          </div>
+          <div class="h-100">
+            <input placeholder="I am interested in..." class="form-control h-100" type="text" aria-label="default input example">
+          </div>
+          <div class="inquiry-button-container mt-3 d-flex flex-row gap-3 align-items-center">
+            <button (click)="openInbox()" class="inquiry-button btn btn-primary w-100">Send Inquiry</button>
+            <img src="/facebook.svg">
+          </div>
         </div>
     </div>
 </div>

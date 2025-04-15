@@ -13,4 +13,5 @@ export class NavBarComponent {
   buyerLoggedIn: boolean = true;
   adminLoggedIn: boolean = false;
   agentLoggedIn: boolean = false;
+  
 }
