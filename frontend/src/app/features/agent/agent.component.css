@@ -1,0 +1,103 @@
+/* General container styling */
+.agent-profile {
+    max-width: 10000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.agent-profile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.profile-details a {
+    text-decoration: none; /* Removes underline */
+    color: #007bff; /* Link color */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.profile-details a:hover {
+    color: #0056b3; /* Darker color on hover */
+}
+
+.agent-profile h1 {
+    font-size: 2.8rem;
+    color: #02264d;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.profile-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+    margin-top: 1rem;
+}
+
+.profile-details p {
+    margin: 0.8rem 0;
+    font-size: 1.1rem;
+}
+
+.profile-details strong {
+    color: #007bff;
+    font-weight: bold;
+}
+
+button {
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .agent-profile {
+        padding: 1.5rem;
+    }
+
+    .agent-profile h1 {
+        font-size: 2.2rem;
+    }
+
+    .profile-details {
+        font-size: 1rem;
+    }
+
+    button {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+}

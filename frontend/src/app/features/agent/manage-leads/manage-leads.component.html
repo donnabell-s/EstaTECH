@@ -1,3 +1,12 @@
+<div class="filters">
+    <label for="propertyFilter">Filter by Property:</label>
+    <input id="propertyFilter" type="text" placeholder="Enter property name" disabled />
+
+    <label for="buyerFilter">Filter by :</label>
+    <input id="buyerFilter" type="text" placeholder="Enter buyer name" disabled />
+
+</div>
+
 <div class="manage-leads">
 
     <table>
@@ -24,9 +33,11 @@
                         <option value="warm">Warm</option>
                     </select>
                 </td>
-                <td>
+                <td id = "buttons">
                     <button onclick="alert('Add notes for John Doe')">Add Notes</button>
                     <button onclick="alert('Message John Doe')">Message</button>
+                    <button onclick="alert('View Property')">View Property</button>
+                    <button onclick="alert('Schedule Visit')">Schedule Visit</button>
                 </td>
             </tr>
             <tr>
@@ -41,9 +52,11 @@
                         <option value="warm">Warm</option>
                     </select>
                 </td>
-                <td>
+                <td id = "buttons">
                     <button onclick="alert('Add notes for Jane Smith')">Add Notes</button>
                     <button onclick="alert('Message Jane Smith')">Message</button>
+                    <button onclick="alert('View Property')">View Property</button>
+                    <button onclick="alert('Schedule Visit')">Schedule Visit</button>
                 </td>
             </tr>
         </tbody>
