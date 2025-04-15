@@ -191,6 +191,10 @@ const routes: Routes = [
       {
         path: 'internal-messaging',
         loadComponent: () => import('./features/platform-wide/internal-messaging/internal-messaging.component').then(m => m.InternalMessagingComponent)
+      },
+      {
+        path: 'log-in',
+        loadComponent: () => import('./features/platform-wide/log-in/log-in.component').then(m => m.LogInComponent)
       }
     ]
   },
