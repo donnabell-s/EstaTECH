@@ -71,10 +71,6 @@ const routes: Routes = [
         loadComponent: () => import('./features/agent/manage-leads/manage-leads.component').then(m => m.ManageLeadsComponent)
       },
       {
-        path: 'upload-marketing',
-        loadComponent: () => import('./features/agent/upload-marketing/upload-marketing.component').then(m => m.UploadMarketingComponent)
-      },
-      {
         path: 'coordinate-offers',
         loadComponent: () => import('./features/agent/coordinate-offers/coordinate-offers.component').then(m => m.CoordinateOffersComponent)
       },
